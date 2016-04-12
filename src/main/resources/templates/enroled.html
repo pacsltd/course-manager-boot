@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/layout">
+<section layout:fragment="content">
+
+	<h4>
+		Thank you for enrolling on our Course at <span th:text="${booking.event.city}">Liverpool</span> on <span th:text="${{booking.event.date}}">5th Jan 2019</span>
+	</h4>
+
+
+	<ol>
+		<li><label for="firstName">First Name*</label> <span th:text="${booking.firstName}" class="text">xxxxxxxxx</span></li>
+
+		<li><label for="lastName">Last Name*</label> <span th:text="${booking.lastName}" class="text">xxxxxxx </span></li>
+
+		<li><label for="email">E-Mail*</label> <span th:text="${booking.email}" class="text">xxxxxxx </span></li>
+
+		<li><label for="company">Company*</label> <span th:text="${booking.company}" class="text">xxxxxxx </span></li>
+
+		<li><label for="message">Your Message</label> <span th:text="${booking.message}">aaaaaaaaaa</span></li>
+
+	</ol>
+</section>
+</html>

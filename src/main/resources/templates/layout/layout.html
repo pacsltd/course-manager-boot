@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+    <title>Coverage Unit Test Courses</title>
+    
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"  />
+    
+    <script type="text/javascript" th:src="@{/js/jquery-2.1.3.js}"></script>
+  </head>
+  <body>
+  <div class="main">
+		<div class="header">
+			<div class="header_resize">
+				<div class="logo">
+					<h1>
+						<a th:href="@{/home}"><span>Advanced Java</span><small>Learn from the experts</small></a>
+					</h1>
+				</div>
+				<div class="menu">
+					<ul>
+						<li><a th:href="@{/home}" 		  th:class="${home_active}" 			><span th:text="#{menu.home}" /> </a> </li>
+						<li><a th:href="@{/unit_testing}" th:class="${unit_testing_active}" 	><span th:text="#{menu.unit.testing}" /></a></li>
+						<li><a th:href="@{/expert_java}"  th:class="${expert_java_active}" 		><span>Expert Java</span></a></li>
+						<li><a th:href="@{/clean_code}"   th:class="${clean_code_active}" 		><span>Clean Code</span></a></li>
+						<li><a th:href="@{/contact}" 	  th:class="${contact_us_active}" 		><span>Contact Us</span></a></li> 
+					</ul>
+				</div>
+				<div class="clr"></div>
+			</div>
+		</div>
+
+
+		<div class="body">
+			<div class="body_resize">
+				<section layout:fragment="content">
+      				<p>Page content goes here</p>
+    			</section>
+			</div>
+		</div>
+
+
+		<div class="FBG">
+			<div class="FBG_resize">
+				<div class="blok">
+					<h2>About</h2>
+					<img th:src="@{/images/fbg_1.gif}" alt="" width="79" height="87" />
+					<p>POOWLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis
+						aliquam, lectus turpis varius lorem, eu turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede
+						condimentum odio, ac blandit ante orci ut diam.</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing urna.<br />
+					</p>
+					<a href="#"><img th:src="@{/images/learn_more.gif}" alt="" width="99" height="25" border="0" /></a>
+				</div>
+				<div class="blok">
+					<h2>
+						<span>Lorem</span> Ipsum
+					</h2>
+					<p>
+						<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac
+						convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. <br /> Donec mattis, purus nec placerat bibendum, dui pede condimentum
+						odio, ac blandit ante orci ut diam.
+					</p>
+					<ul>
+						<li><a href="#">â¢ consequat molestie</a></li>
+						<li><a href="#">â¢ sem justo</a></li>
+						<li><a href="#">â¢ semper</a></li>
+						<li><a href="#">â¢ magna sed purus</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">â¢ sem justo</a></li>
+						<li><a href="#">â¢ semper</a></li>
+						<li><a href="#">â¢ magna sed purus</a></li>
+						<li><a href="#">â¢ consequat molestie</a></li>
+					</ul>
+				</div>
+				<div class="blok">
+					<h2>
+						<span>Image</span> Gallery
+					</h2>
+					<img th:src="@{/images/ggallery.gif}" alt="" width="68" height="68" />
+					<img th:src="@{/images/ggallery.gif}" alt="" width="68" height="68" />
+					<img th:src="@{/images/ggallery.gif}" alt="" width="68" height="68" />
+					<img th:src="@{/images/ggallery.gif}" alt="" width="68" height="68" />
+					<img th:src="@{/images/ggallery.gif}" alt="" width="68" height="68" />
+					<img th:src="@{/images/ggallery.gif}" alt="" width="68" height="68" />
+					<div class="clr"></div>
+					<h2>Lorem ipsum</h2>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.</p>
+				</div>
+				<div class="clr"></div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer_resize">
+				<p class="lf">
+					Copyright &copy; <a href="#">Domain Name</a>. All Rights Reserved
+				</p>
+				<p class="rf">
+					Get More <a target="_blank" href="http://www.free-css.com/">Free CSS Templates</a> by <a target="_blank" href="http://www.hotwebsitetemplates.net/">HotWebsiteTemplates</a>
+					| Download more: <a href="http://www.csstemplatesfree.org">CSS Website Templates</a>
+				</p>
+				<div class="clr"></div>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+  
+ 
+  </body>
+</html>

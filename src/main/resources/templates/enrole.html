@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout">
+<section layout:fragment="content">
+
+<div>
+	<h2>Enrole into Course at <span th:text="${booking.event.city}">Liverpool</span> on <span th:text="${{booking.event.date}}">5th Jan 2019</span></h2>
+
+	<p class="big bgline">Enrole you sucker !!!!!!!!!!!!!
+	If you need more information about our course then please fill out the form below or send an email to
+	<a href="mailto:enquiries@java-experts.co.uk?Subject=Java%20Expert%20Course" target="_top">enquiries@java-experts.co.uk</a>
+	   
+	</p>
+	
+	
+	<form action="#" th:action="@{/enrole}" th:object="${booking}"  method="post" id="contactform">
+
+		<input type="hidden" name="eventId" th:field="${booking.event.eventId}" />
+
+		<ol>
+			<li>
+				<label for="firstName">First Name*</label> 
+				<input type="text" th:field="*{firstName}" class="text" th:errorclass="fieldError"/>
+			</li>
+			
+			
+			<li>
+				<label for="lastName">Last Name*</label> 
+				<input type="text" th:field="*{lastName}" class="text" th:errorclass="fieldError"/>
+			</li>
+			
+			
+			<li>
+				<label for="email">E-Mail*</label> 
+				<input type="text" th:field="*{email}" class="text" th:errorclass="fieldError"/>
+			</li>
+				
+			<li>
+				<label for="confirmEmail">Confirm E-Mail*</label> 
+				<input type="text" th:field="*{confirmEmail}" class="text" th:errorclass="fieldError"/>
+			</li>
+			
+			<li>
+				<label for="company">Company*</label> 
+				<input type="text" th:field="*{company}" class="text" th:errorclass="fieldError"/>
+			</li>
+			
+			
+			<li>
+				<label for="message">Your Message</label> 
+				<textarea id="message" th:field="*{message}" th:errorclass="fieldError" rows="6" cols="50" ></textarea>
+			</li>
+
+			<span th:if="${#fields.hasErrors('*')}">		
+			<li>
+				<label for="poo">Errors</label>
+			</li>
+			<li>		
+				<p id="poo" th:errors="*{all}">Incorrect date</p>
+			</li>
+			</span>
+
+
+			<li class="buttons">
+				<input type="submit" name="imageField" id="imageField" value="Send message" class="send" />
+				<div class="clr"></div>
+			</li>
+		
+		</ol>
+		
+
+		
+	</form>
+	
+	
+	
+</div>
+<div class="clr"></div>
+<br/>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</section>
+</html>

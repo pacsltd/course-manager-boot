@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout">
+<section layout:fragment="content">
+	<div class="left">
+		<div th:include="/sections/unit_testing_header">Unit test header...</div>
+
+		<a href="unit_testing"><img th:src="@{/images/reading.gif}" alt="" width="121" height="25" border="0" /></a>
+
+		<!--  dotted line  -->
+		<div class="bg"></div>
+
+		<span th:include="/sections/expert_java_header">Expert Java header...</span> <a href="expert_java"><img th:src="@{/images/reading.gif}" alt=""
+			width="121" height="25" border="0" /></a>
+
+		<div class="bg"></div>
+		<h2>Clean Code</h2>
+		<!-- TODO eplace with Clean code header like above -->
+		<p>
+			<strong>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</strong><br />
+			Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
+			passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+			1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil)<a href="#"> by Cicero, written in 45 BC. This book is</a> a treatise on
+			the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in
+			section 1.10.32.
+		</p>
+		<a href="#"><img th:src="@{/images/reading.gif}" alt="" width="121" height="25" border="0" /></a>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</div>
+
+	<div class="right">
+		<div th:include="/common/upcoming_courses">Upcoming courses...</div>
+	</div>
+
+	<div class="clr"></div>
+
+
+</section>
+</html>

@@ -1,0 +1,176 @@
+<div class="left">
+	<!-- 
+        <h2>Welcome to 'CodeCoverage'</h2>
+         -->
+	<img src="images/img_1.gif" alt="" width="115" height="115" class="floated" />
+
+	<h2 class="itinerary">Course Itinerary</h2>
+
+	<form action="ajax/fuckit" id="bookCourseForm" method="post">
+		<input type="text" name="firstName" placeholder="Search..."> <input type="submit" value="Search">
+	</form>
+
+	<!-- the result of the search will be rendered inside this div -->
+	<div id="result">result</div>
+
+	<h3>
+		<span>Day 1</span>
+	</h3>
+	<ul>
+		<li><a href="#">Introduction to JUnit</a></li>
+		<li><a href="#">Customising your IDE to speed up coding tests</a></li>
+		<li><a href="#">Fixtures - setting up and tearing down</a></li>
+		<li><a href="#">Dynamically track the code coverage as you write unit tests</a></li>
+		<li><a href="#">Handling Exceptions in your test code</a></li>
+	</ul>
+
+	<h3>
+		<span>Day 2</span>
+	</h3>
+	<ul>
+		<li><a href="#">Mocking Dependencies</a></li>
+		<li><a href="#">Exploiting the power of Hamcrest matchers</a></li>
+		<li><a href="#">Hidden JUnit features</a></li>
+		<li><a href="#">Using builders to create commonly used model objects</a></li>
+	</ul>
+
+	<h3>
+		<span>Day 3</span>
+	</h3>
+	<ul>
+		<li><a href="#">Unit Testing Best Practises</a></li>
+		<li><a href="#">Private methods - To test or not to test</a></li>
+		<li><a href="#">Testing with the Spring Framework</a></li>
+		<li><a href="#">Beware of the anti-patterns that can make your tests useless</a></li>
+		<li><a href="#">Advanced Techniques</a></li>
+		<li><a href="#">Recommended reading</a></li>
+	</ul>
+
+	<div class="bg"></div>
+
+	<p>&nbsp;</p>
+
+</div>
+<div class="right">
+			<div th:include="/common/upcoming_courses">Upcoming courses...</div>
+	
+</div>
+<div class="clr"></div>
+
+
+<#import "spring.ftl" as spring />
+
+<form action="enquiry" method="POST">
+	Name x1: <@spring.formInput "bookingForm.firstName"/> <@spring.formInput "bookingForm.lastName"/> <input type="submit" value="submit" />
+</form>
+
+
+
+<form:form action="booking" method="post" commandName="bookingForm">
+	<table border="0">
+		<tr>
+			<td colspan="2" align="center"><h2>Spring MVC Form Demo - Registration2</h2></td>
+		</tr>
+		<tr>
+			<td>First Name:</td>
+			<td><form:input path="firstName" /></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><form:input path="lastName" /></td>
+		</tr>
+		<tr>
+			<td>E-mail:</td>
+			<td><form:input path="email" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="Make Course1 Enquiry" /></td>
+		</tr>
+	</table>
+</form:form>
+
+
+
+<form:form action="booking" method="post" commandName="bookingForm">
+	<table border="0">
+		<tr>
+			<td colspan="2" align="center"><h2>Spring MVC Form Demo - Registration 3</h2></td>
+		</tr>
+		<tr>
+			<td>First Name:</td>
+			<td><form:input path="firstName" /></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><form:input path="lastName" /></td>
+		</tr>
+		<tr>
+			<td>E-mail:</td>
+			<td><form:input path="email" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="Make Course2 Enquiry" /></td>
+		</tr>
+	</table>
+</form:form>
+
+
+
+
+<content tag="itinerary"> <script>
+	$(function() {
+		$("#bookCourseForm").submit(function(event) {
+			//alert("Handler for .submit() called.");
+			event.preventDefault();
+
+			$.ajax({
+				type : "POST",
+				url : 'ajax/fuckit',
+				data : $(this).serialize(),
+				success : function(response) {
+					$("#result").html($(response));
+				}
+			});
+			//alert("done ajax");
+			return false;
+		});
+
+		/*
+		$('#bookCourseForm').form({
+			success : function(data) {
+				$("#result").empty().append($(data));
+			}
+		});
+		 */
+
+		/*
+		$("#bookCourseForm2").submit(
+			function(event) {
+				alert("twat")
+
+			});
+		
+		// Attach a submit handler to the form
+		$("#bookCourseForm")
+				.submit(
+						function(event) {
+							// Stop form from submitting normally
+							event.preventDefault();
+							// Get some values from elements on the page:
+							var $form = $(this);
+							var url = "fuckit2/"; //$form.attr("action");
+							alert(url)
+							// Send the data using post
+							var posting = $.post(url);
+							// Put the results in a div
+							posting.done(function(data) {
+								$("#result").empty().append($(data));
+							});
+						});
+		
+		 */
+
+	});
+</script> </content>
+
+

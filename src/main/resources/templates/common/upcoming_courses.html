@@ -1,0 +1,21 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" >
+<h3>
+	<span>Upcoming Courses</span>
+</h3>
+
+<!-- //TODO we should display 1 place left or x places left -->
+
+<ul>
+	<li th:each="event : ${events}" class="sponsors" th:unless="${event.placesLeft lt 1}" >
+		<a th:href="@{/enrole/{eventId}(eventId=${event.eventId})}" th:text="${event.city}" href="somelink"></a>
+
+		<span th:text="${event.placesLeft + (event.placesLeft gt 1 ? ' Places ' : ' Place ') + 'Left'}">5 places left</span>
+		
+		<br /> 
+		<span th:text="${{event.date}}">23rd May 2015</span>
+		
+		</li>
+</ul>
+<div class="clr"></div>
+</html>
+
